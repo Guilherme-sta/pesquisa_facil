@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acesso — Pesquisa Fácil IFPI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}"></head>
+<body><main style="max-width:480px;margin:10vh auto;background:#fff;padding:2rem;border-radius:14px;box-shadow:var(--shadow)">
+<h1 style="color:var(--verde-escuro);margin-bottom:1rem">Pesquisa Fácil — IFPI</h1><p style="margin-bottom:1rem">Entre com seu usuário e senha do SUAP. A senha fica mascarada e não é salva.</p>
+<form id="loginForm"><label for="usuario">Usuário SUAP</label><input id="usuario" name="usuario" autocomplete="username" required maxlength="200" style="display:block;width:100%;padding:.8rem;margin:.4rem 0 1rem">
+<label for="senha">Senha SUAP</label><input id="senha" name="senha" type="password" autocomplete="current-password" required maxlength="1024" style="display:block;width:100%;padding:.8rem;margin:.4rem 0 1rem">
+<button class="pill active" type="submit">Entrar</button><p id="loginError" role="alert" style="color:#b91c1c;margin-top:1rem"></p></form>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async e => { e.preventDefault(); const form=e.currentTarget; const button=form.querySelector('button[type="submit"]'); const out=document.getElementById('loginError'); out.textContent=''; button.disabled=true; try { const response=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({usuario:document.getElementById('usuario').value,senha:document.getElementById('senha').value})}); const data=await response.json(); if(!response.ok||!data.success) throw new Error(data.error||'Não foi possível autenticar.'); document.getElementById('senha').value=''; location.href='/painel'; } catch(err) { document.getElementById('senha').value=''; out.textContent=err.message; button.disabled=false; } });
+</script></main></body></html>

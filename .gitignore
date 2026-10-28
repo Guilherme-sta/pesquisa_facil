@@ -1,0 +1,15 @@
+# Python bytecode and secrets
+__pycache__/
+*.py[cod]
+chave.key
+credenciais.dat
+.env
+.env.*
+data/private/cache*.json
+data/private/cache*.tmp
+.venv/
+venv/
+data/private/*
+!data/private/citation_profiles.json
+*.xlsx
+*.zip

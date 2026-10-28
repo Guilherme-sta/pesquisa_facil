@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa Fácil — IFPI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/site.css">
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-badge">IFPI</span>
+      <span class="logo-text">Pesquisa Fácil</span>
+    </div>
+    <a class="metabase-btn" href="https://indicadores.ifpi.edu.br/bi/" target="_blank">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="14" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/>
+      </svg>
+      Abrir Metabase
+    </a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Indicadores · CATCE / Teresina Central</div>
+    <h1>Pesquisa <span>Fácil</span></h1>
+    <p class="hero-desc">Acesso rápido aos indicadores de produtividade, titulação docente e grupos de pesquisa do IFPI. Selecione uma aba para começar.</p>
+  </div>
+</div>
+
+<div class="nav-pills">
+  <button class="pill active" onclick="showSection('produtividade', this)">📊 Produtividade</button>
+  <button class="pill" onclick="showSection('titulacao', this)">🎓 Titulação</button>
+  <button class="pill" onclick="showSection('grupos-campus', this)">🏫 Grupos de Pesquisa</button>
+  <button class="pill" onclick="showSection('numeros-gerais', this)">🔢 Números Gerais</button>
+  <button class="pill" onclick="showSection('patentes', this)">📜 Patentes</button>
+  <button class="pill" onclick="showSection('citacoes', this); carregarCitacoes()">🔎 Citações</button>
+</div>
+
+<main>
+
+  <!-- ─── ABA 1: PRODUTIVIDADE ─── -->
+  <section id="produtividade" class="section visible">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00703C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </div>
+      <div class="section-info">
+        <h2>Produtividade Docente</h2>
+        <p>Visualizações sobre a produção acadêmica do corpo docente — artigos publicados, evolução histórica e painel individualizado por campus e servidor.</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-visual">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="8" width="44" height="48" rx="4" fill="#C8E6D4"/>
+            <rect x="18" y="18" width="28" height="3" rx="1.5" fill="#00703C"/>
+            <rect x="18" y="25" width="22" height="3" rx="1.5" fill="#00703C" opacity=".6"/>
+            <rect x="18" y="32" width="26" height="3" rx="1.5" fill="#00703C" opacity=".4"/>
+            <rect x="18" y="39" width="16" height="3" rx="1.5" fill="#00703C" opacity=".25"/>
+            <circle cx="48" cy="46" r="10" fill="#F5C518"/>
+            <polyline points="43,46 47,50 53,42" stroke="#004D2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Question · Produção</span>
+          <div class="card-title">Artigos Publicados Anualmente</div>
+          <p class="card-desc">Série histórica do número de artigos acadêmicos publicados por docentes do IFPI ao longo dos anos. Permite identificar tendências de crescimento na produção científica.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q165</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/165-artigos-publicados-anualmente"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent misto"></div>
+        <div class="card-visual">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="48" height="48" rx="6" fill="#C8E6D4"/>
+            <rect x="15" y="36" width="8" height="14" rx="2" fill="#00703C"/>
+            <rect x="27" y="28" width="8" height="22" rx="2" fill="#00703C" opacity=".7"/>
+            <rect x="39" y="20" width="8" height="30" rx="2" fill="#F5C518"/>
+            <circle cx="19" cy="24" r="5" fill="#fff" stroke="#00703C" stroke-width="2"/>
+            <line x1="23" y1="20" x2="36" y2="14" stroke="#00703C" stroke-width="1.5" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Dashboard · CATCE</span>
+          <div class="card-title">Produtividade — Docente Específico</div>
+          <p class="card-desc">Painel do campus CATCE com filtros por área de formação e servidor. Visualize a produção individualizada de cada docente, com dados de stricto sensu e doutorado.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Dashboard · Tab 25</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/dashboard/12-pesquisa-facil-exemplo?%25C3%25A1rea_de_forma%25C3%25A7%25C3%25A3o=Matem%C3%A1tica&ano_%25C3%25BAltimo_stricto-sensu=&ano_obten%25C3%25A7%25C3%25A3o_doutorado=&ano_obten%25C3%25A7%25C3%25A3o_mestrado=&c%25C3%25A2mpus_de_exerc%25C3%25ADcio=CATCE&nome_servidor=&tab=25-produtividade---docente-espec%C3%ADfico"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── ABA 2: TITULAÇÃO ─── -->
+  <section id="titulacao" class="section">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00703C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+        </svg>
+      </div>
+      <div class="section-info">
+        <h2>Titulação Docente</h2>
+        <p>Evolução histórica da qualificação do corpo docente — distribuição de mestres e doutores ao longo dos anos, por campus e área de formação.</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-accent amarelo"></div>
+        <div class="card-visual" style="background: var(--amarelo-claro);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="20" r="12" fill="#F5C518" opacity=".8"/>
+            <path d="M20 20 L32 14 L44 20 L32 26 Z" fill="#004D2A"/>
+            <rect x="26" y="26" width="12" height="2" fill="#004D2A"/>
+            <path d="M20 36 Q32 30 44 36 L44 44 Q32 48 20 44 Z" fill="#C8E6D4" stroke="#00703C" stroke-width="1.5"/>
+            <polyline points="14,50 22,44 32,47 42,42 50,46" stroke="#F5C518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag am">Question · Histórico</span>
+          <div class="card-title">Evolução Anual da Titulação Docente</div>
+          <p class="card-desc">Acompanhe como o nível de qualificação do corpo docente do IFPI evoluiu ao longo dos anos — comparando a proporção de especialistas, mestres e doutores por período.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q178</span>
+          <a class="card-link am"
+             href="https://indicadores.ifpi.edu.br/bi/question/178-evolucao-anual-da-titulacao-docente"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent amarelo"></div>
+        <div class="card-visual" style="background: var(--amarelo-claro);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="10" width="48" height="36" rx="4" fill="#FFF8D6" stroke="#F5C518" stroke-width="1.5"/>
+            <polyline points="16,38 24,28 32,32 40,20 48,24" stroke="#F5C518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <polyline points="16,42 24,35 32,38 40,30 48,34" stroke="#00703C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="3 2"/>
+            <circle cx="24" cy="28" r="2.5" fill="#F5C518"/>
+            <circle cx="40" cy="20" r="2.5" fill="#F5C518"/>
+            <circle cx="24" cy="35" r="2.5" fill="#00703C"/>
+            <circle cx="40" cy="30" r="2.5" fill="#00703C"/>
+            <rect x="14" y="50" width="10" height="3" rx="1.5" fill="#F5C518"/>
+            <rect x="30" y="50" width="10" height="3" rx="1.5" fill="#00703C"/>
+            <text x="26" y="53" font-size="4" fill="#7a5f00" font-family="sans-serif">M</text>
+            <text x="42" y="53" font-size="4" fill="#004D2A" font-family="sans-serif">D</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag am">Question · Temporal</span>
+          <div class="card-title">Temporal — Mestrado e Doutorado</div>
+          <p class="card-desc">Comparativo temporal entre docentes com mestrado e doutorado. Visualize a curva de crescimento de cada titulação ao longo dos anos de forma simultânea.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q177</span>
+          <a class="card-link am"
+             href="https://indicadores.ifpi.edu.br/bi/question/177-temporal-mestrado-e-doutorado"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent misto"></div>
+        <div class="card-visual" style="background: linear-gradient(135deg, var(--verde-claro) 0%, var(--amarelo-claro) 100%);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="22" r="10" fill="#C8E6D4" stroke="#00703C" stroke-width="2"/>
+            <path d="M22 22 L32 17 L42 22 L32 27 Z" fill="#004D2A"/>
+            <rect x="29" y="27" width="6" height="2" fill="#004D2A"/>
+            <path d="M18 34 Q32 28 46 34 L44 44 Q32 49 20 44 Z" fill="#FFF8D6" stroke="#F5C518" stroke-width="1.5"/>
+            <rect x="25" y="36" width="6" height="2" rx="1" fill="#7a5f00" opacity=".5"/>
+            <rect x="33" y="36" width="6" height="2" rx="1" fill="#004D2A" opacity=".5"/>
+            <text x="20" y="55" font-size="6" fill="#5A5A52" font-family="sans-serif">CATCE</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Dashboard · CATCE</span>
+          <div class="card-title">Titulação — Painel por Docente</div>
+          <p class="card-desc">Dashboard filtrado para o campus CATCE com visão detalhada da titulação por servidor. Inclui filtros por área de formação, data de obtenção de mestrado e doutorado.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Dashboard · Tab 24</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/dashboard/12-pesquisa-facil-exemplo?%25C3%25A1rea_de_forma%25C3%25A7%25C3%25A3o=Matem%C3%A1tica&ano_%25C3%25BAltimo_stricto-sensu=&ano_obten%25C3%25A7%25C3%25A3o_doutorado=&ano_obten%25C3%25A7%25C3%25A3o_mestrado=&c%25C3%25A2mpus_de_exerc%25C3%25ADcio=CATCE&nome_servidor=&tab=24-titula%C3%A7%C3%A3o"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── ABA 3: GRUPOS POR CAMPUS ─── -->
+  <section id="grupos-campus" class="section">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00703C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <div class="section-info">
+        <h2>Grupos de Pesquisa por Campus</h2>
+        <p>Consulte os grupos de pesquisa vinculados a cada campus do IFPI, com dados de líderes, matrículas e contatos dos servidores correspondentes. Por padrão, todos os campi são exibidos.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-group w-sm">
+        <label for="campusSelect">Campus</label>
+        <select id="campusSelect">
+          <option value="">— Todos os campi —</option>
+          <option value="grupos_ang_final.json">Angical</option>
+          <option value="grupos_campo_maior_final.json">Campo Maior</option>
+          <option value="grupos_central_final.json">Teresina Central</option>
+          <option value="grupos_cocal_final.json">Cocal</option>
+          <option value="grupos_corrente_maior_final.json">Corrente</option>
+          <option value="grupos_dirceu_final.json">Dirceu Arcoverde</option>
+          <option value="grupos_floriano_final.json">Floriano</option>
+          <option value="grupos_freitas_final.json">José de Freitas</option>
+          <option value="grupos_oeiras_final.json">Oeiras</option>
+          <option value="grupos_parnaiba_final.json">Parnaíba</option>
+          <option value="grupos_paulistana_final.json">Paulistana</option>
+          <option value="grupos_pedroII_final.json">Pedro II</option>
+        </select>
+      </div>
+      <div class="filter-group w-lg">
+        <label for="searchCampus">Filtrar (campus, grupo, líder, matrícula, e-mail)</label>
+        <input type="text" id="searchCampus" placeholder="Digite para pesquisar...">
+      </div>
+    </div>
+
+    <div id="counterCampus" class="counter-bar" style="display:none;"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <th>Grupo de Pesquisa</th>
+            <th>Servidor (Match)</th>
+            <th>Líderes Originais</th>
+          </tr>
+        </thead>
+        <tbody id="tableCampus">
+          <tr class="status-row">
+            <td colspan="4"><span class="loading-spinner"></span> Carregando grupos de todos os campi...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── ABA 4: GRUPOS IFPI ─── -->
+  <section id="grupos-ifpi" class="section">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00703C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+      <div class="section-info">
+        <h2>Grupos de Pesquisa — IFPI</h2>
+        <p>Listagem completa de todos os grupos de pesquisa do IFPI com seus respectivos líderes. Filtre pelo nome do grupo ou pelo nome do líder.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-group w-lg">
+        <label for="searchGrupos">Filtrar por grupo ou líder</label>
+        <input type="text" id="searchGrupos" placeholder="Digite para pesquisar...">
+      </div>
+    </div>
+
+    <div id="counterGrupos" class="counter-bar" style="display:none;"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:48px;">#</th>
+            <th>Grupo de Pesquisa</th>
+            <th>Líder 1</th>
+            <th>Líder 2</th>
+          </tr>
+        </thead>
+        <tbody id="tableGrupos">
+          <tr class="status-row">
+            <td colspan="4">
+              <span class="loading-spinner"></span> Carregando grupos de pesquisa...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── ABA 5: NÚMEROS GERAIS (GN) ─── -->
+  <section id="numeros-gerais" class="section">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00703C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="9" rx="1"/>
+          <rect x="14" y="3" width="7" height="5" rx="1"/>
+          <rect x="14" y="12" width="7" height="9" rx="1"/>
+          <rect x="3" y="16" width="7" height="5" rx="1"/>
+        </svg>
+      </div>
+      <div class="section-info">
+        <h2>Números Gerais (GN)</h2>
+        <p>Indicadores consolidados de produção científica e corpo docente do IFPI. Artigos, capítulos e livros do ano atual (amarelo) mostram apenas o período corrente; os indicadores gerais (verde) são acumulados até o ano atual. Os totais por estrato Qualis ainda não têm o recorte temporal confirmado.</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Artigos - ano atual -->
+      <div class="card">
+        <div class="card-accent amarelo"></div>
+        <div class="card-visual" style="background: var(--amarelo-claro);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="8" width="40" height="48" rx="4" fill="#FFF8D6" stroke="#F5C518" stroke-width="1.5"/>
+            <rect x="20" y="18" width="24" height="3" rx="1.5" fill="#7a5f00"/>
+            <rect x="20" y="25" width="18" height="3" rx="1.5" fill="#7a5f00" opacity=".6"/>
+            <rect x="20" y="32" width="22" height="3" rx="1.5" fill="#7a5f00" opacity=".4"/>
+            <circle cx="46" cy="44" r="9" fill="#F5C518"/>
+            <text x="43" y="48" font-size="11" fill="#004D2A" font-family="sans-serif" font-weight="700">A</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag am">GN · Ano Atual</span>
+          <div class="card-title">Artigos (Ano Atual)</div>
+          <p class="card-desc">Quantidade de artigos publicados por docentes do IFPI no ano corrente.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q174</span>
+          <a class="card-link am"
+             href="https://indicadores.ifpi.edu.br/bi/question/174-gn-artigos-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Capítulos - ano atual -->
+      <div class="card">
+        <div class="card-accent amarelo"></div>
+        <div class="card-visual" style="background: var(--amarelo-claro);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="44" height="44" rx="4" fill="#FFF8D6" stroke="#F5C518" stroke-width="1.5"/>
+            <line x1="32" y1="14" x2="32" y2="50" stroke="#F5C518" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <rect x="16" y="20" width="12" height="3" rx="1.5" fill="#7a5f00" opacity=".7"/>
+            <rect x="16" y="27" width="10" height="3" rx="1.5" fill="#7a5f00" opacity=".4"/>
+            <rect x="36" y="20" width="12" height="3" rx="1.5" fill="#7a5f00" opacity=".7"/>
+            <rect x="36" y="27" width="10" height="3" rx="1.5" fill="#7a5f00" opacity=".4"/>
+            <circle cx="46" cy="44" r="8" fill="#F5C518"/>
+            <text x="43" y="47" font-size="9" fill="#004D2A" font-family="sans-serif" font-weight="700">C</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag am">GN · Ano Atual</span>
+          <div class="card-title">Capítulos (Ano Atual)</div>
+          <p class="card-desc">Quantidade de capítulos de livros publicados por docentes do IFPI no ano corrente.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q176</span>
+          <a class="card-link am"
+             href="https://indicadores.ifpi.edu.br/bi/question/176-gn-capitulos-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Livros - ano atual -->
+      <div class="card">
+        <div class="card-accent amarelo"></div>
+        <div class="card-visual" style="background: var(--amarelo-claro);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="12" width="16" height="40" rx="2" fill="#F5C518" opacity=".85"/>
+            <rect x="30" y="8" width="16" height="44" rx="2" fill="#7a5f00" opacity=".55"/>
+            <rect x="48" y="16" width="10" height="36" rx="2" fill="#F5C518" opacity=".6"/>
+            <text x="17" y="34" font-size="9" fill="#004D2A" font-family="sans-serif" font-weight="700">L</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag am">GN · Ano Atual</span>
+          <div class="card-title">Livros (Ano Atual)</div>
+          <p class="card-desc">Quantidade de livros publicados por docentes do IFPI no ano corrente.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q175</span>
+          <a class="card-link am"
+             href="https://indicadores.ifpi.edu.br/bi/question/175-gn-livros-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Total de artigos - geral -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-visual">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="8" width="40" height="48" rx="4" fill="#C8E6D4"/>
+            <rect x="20" y="18" width="24" height="3" rx="1.5" fill="#00703C"/>
+            <rect x="20" y="25" width="18" height="3" rx="1.5" fill="#00703C" opacity=".6"/>
+            <rect x="20" y="32" width="22" height="3" rx="1.5" fill="#00703C" opacity=".4"/>
+            <circle cx="46" cy="44" r="9" fill="#00703C"/>
+            <text x="42" y="48" font-size="10" fill="#fff" font-family="sans-serif" font-weight="700">∑</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Geral</span>
+          <div class="card-title">Total de Artigos (Geral)</div>
+          <p class="card-desc">Total acumulado de artigos publicados por docentes do IFPI até o ano atual.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q169</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/169-gn-total-artigos-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Total biblio - geral -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-visual">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="14" width="14" height="38" rx="2" fill="#00703C" opacity=".85"/>
+            <rect x="25" y="8" width="14" height="44" rx="2" fill="#00703C"/>
+            <rect x="42" y="18" width="14" height="34" rx="2" fill="#00703C" opacity=".55"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Geral</span>
+          <div class="card-title">Total de Produção Bibliográfica (Geral)</div>
+          <p class="card-desc">Soma geral da produção bibliográfica (artigos, capítulos e livros) dos docentes do IFPI até o ano atual.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q173</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/173-gn-total-biblio-este-ano"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Doutores - geral -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-visual">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="20" r="11" fill="#C8E6D4" stroke="#00703C" stroke-width="2"/>
+            <path d="M21 20 L32 14 L43 20 L32 26 Z" fill="#004D2A"/>
+            <rect x="27" y="26" width="10" height="2" fill="#004D2A"/>
+            <path d="M18 40 Q32 34 46 40 L44 50 Q32 54 20 50 Z" fill="#C8E6D4" stroke="#00703C" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Geral</span>
+          <div class="card-title">Doutores (Geral)</div>
+          <p class="card-desc">Total geral de docentes com titulação de doutorado no IFPI até o ano atual.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q179</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/179-gn-doutores-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mestres - geral -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-visual">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="20" r="11" fill="#C8E6D4" stroke="#00703C" stroke-width="2" opacity=".85"/>
+            <path d="M21 20 L32 14 L43 20 L32 26 Z" fill="#00703C"/>
+            <rect x="27" y="26" width="10" height="2" fill="#00703C"/>
+            <path d="M18 40 Q32 34 46 40 L44 50 Q32 54 20 50 Z" fill="#E8F5EE" stroke="#00703C" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Geral</span>
+          <div class="card-title">Mestres (Geral)</div>
+          <p class="card-desc">Total geral de docentes com titulação de mestrado no IFPI até o ano atual.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q180</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/180-gn-mestres-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Total docentes - geral -->
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-visual">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="8" fill="#C8E6D4" stroke="#00703C" stroke-width="2"/>
+            <circle cx="42" cy="22" r="8" fill="#00703C" opacity=".6"/>
+            <path d="M10 50 Q22 40 34 50 L32 54 Q22 48 12 54 Z" fill="#C8E6D4" stroke="#00703C" stroke-width="1.5"/>
+            <path d="M30 50 Q42 40 54 50 L52 54 Q42 48 32 54 Z" fill="#00703C" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Geral</span>
+          <div class="card-title">Total de Docentes (Geral)</div>
+          <p class="card-desc">Número geral de docentes do IFPI considerados no levantamento, até o ano atual.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q182</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/182-gn-total-docentes-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Qualis A -->
+      <div class="card">
+        <div class="card-accent misto"></div>
+        <div class="card-visual" style="background: linear-gradient(135deg, var(--verde-claro) 0%, var(--amarelo-claro) 100%);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="22" fill="#fff" stroke="#00703C" stroke-width="2"/>
+            <text x="24" y="41" font-size="24" fill="#00703C" font-family="sans-serif" font-weight="700">A</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Qualis</span>
+          <div class="card-title">Total Qualis A</div>
+          <p class="card-desc">Total de publicações classificadas no estrato Qualis A pelos docentes do IFPI.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q170</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/170-gn-total-qualis-a-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Qualis B -->
+      <div class="card">
+        <div class="card-accent misto"></div>
+        <div class="card-visual" style="background: linear-gradient(135deg, var(--verde-claro) 0%, var(--amarelo-claro) 100%);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="22" fill="#fff" stroke="#00703C" stroke-width="2"/>
+            <text x="24" y="41" font-size="24" fill="#00703C" font-family="sans-serif" font-weight="700">B</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Qualis</span>
+          <div class="card-title">Total Qualis B</div>
+          <p class="card-desc">Total de publicações classificadas no estrato Qualis B pelos docentes do IFPI.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q171</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/171-gn-total-qualis-b-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Qualis C -->
+      <div class="card">
+        <div class="card-accent misto"></div>
+        <div class="card-visual" style="background: linear-gradient(135deg, var(--verde-claro) 0%, var(--amarelo-claro) 100%);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="22" fill="#fff" stroke="#00703C" stroke-width="2"/>
+            <text x="24" y="41" font-size="24" fill="#00703C" font-family="sans-serif" font-weight="700">C</text>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">GN · Qualis</span>
+          <div class="card-title">Total Qualis C</div>
+          <p class="card-desc">Total de publicações classificadas no estrato Qualis C pelos docentes do IFPI.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q172</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/172-gn-total-qualis-c-ano-atual"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── ABA 6: PATENTES E REGISTROS ─── -->
+  <section id="patentes" class="section">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00703C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>
+        </svg>
+      </div>
+      <div class="section-info">
+        <h2>Patentes e Registros de Software</h2>
+        <p>Levantamento de patentes e registros de software depositados por docentes do IFPI nos últimos 15 anos.</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-accent misto"></div>
+        <div class="card-visual" style="background: linear-gradient(135deg, var(--verde-claro) 0%, var(--amarelo-claro) 100%);">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="44" height="30" rx="4" fill="#fff" stroke="#00703C" stroke-width="2"/>
+            <circle cx="22" cy="25" r="7" fill="#F5C518"/>
+            <path d="M22 18 v-6 M18 12 h8" stroke="#7a5f00" stroke-width="2" stroke-linecap="round"/>
+            <rect x="34" y="20" width="14" height="3" rx="1.5" fill="#00703C" opacity=".7"/>
+            <rect x="34" y="27" width="10" height="3" rx="1.5" fill="#00703C" opacity=".4"/>
+            <rect x="16" y="46" width="32" height="10" rx="2" fill="#00703C" opacity=".15"/>
+            <path d="M20 51 h24" stroke="#00703C" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Question · Inovação</span>
+          <div class="card-title">Patentes e Registros de Software (15 anos)</div>
+          <p class="card-desc">Levantamento consolidado das patentes e registros de software depositados por docentes do IFPI nos últimos 15 anos, indicador de inovação e transferência tecnológica.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Metabase · Q167</span>
+          <a class="card-link"
+             href="https://indicadores.ifpi.edu.br/bi/question/167-patentes-e-registros-de-software-por-docentes-nos-ultimos-15-anos"
+             target="_blank">
+            Abrir
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="citacoes" class="section">
+    <div class="section-header"><div class="section-icon"><span style="font-size:24px">↗</span></div>
+      <div class="section-info"><h2>Citações por docente</h2><p>Indicador de citações indexadas pelo OpenAlex, com vínculo de autor revisado. Não representa uma contagem do Currículo Lattes.</p></div>
+    </div>
+    <div class="citation-note">Os vínculos entre docentes e autores OpenAlex precisam ser confirmados antes de aparecerem métricas. Currículos sem vínculo validado ficam sem contagem; nunca são associados somente pelo nome. Fonte: OpenAlex. O número anual corresponde às citações recebidas em cada ano; sem ano selecionado, é o total acumulado da fonte.</div>
+    <div class="citation-filters">
+      <label>Buscar docente<input id="citationSearch" type="search" placeholder="Nome"></label>
+      <label>Campus<select id="citationCampus"><option value="">Todos os campi</option><option value="__unknown__">Campus não informado</option></select></label>
+      <label>Área<select id="citationArea"><option value="">Todas as áreas</option></select></label>
+      <label>Titulação<select id="citationDegree"><option value="">Todas</option></select></label>
+      <label>Ano da citação<input id="citationYear" type="number" min="1900" max="2100" placeholder="Total acumulado"></label>
+    </div>
+    <div class="citation-stats"><div><strong id="citationFaculty">—</strong><span>docentes no recorte</span></div><div><strong id="citationLinked">—</strong><span>perfis validados</span></div><div><strong id="citationSum">—</strong><span>soma das citações conhecidas*</span></div></div>
+    <p class="citation-status">* A soma reúne contagens por docente e pode contar novamente a mesma citação em trabalhos com coautoria.</p>
+    <p id="citationStatus" class="citation-status" role="status">Carregue os dados para consultar.</p>
+    <div class="table-wrapper"><table class="citation-table"><thead><tr><th>Docente</th><th>Campus</th><th>Área</th><th>Titulação</th><th>Citações</th><th>Perfil e fonte</th></tr></thead><tbody id="citationRows"><tr><td colspan="6">Aguardando consulta.</td></tr></tbody></table></div>
+  </section>
+</main>
+
+<footer>
+  Fonte:
+  <a href="https://indicadores.ifpi.edu.br/bi/" target="_blank">indicadores.ifpi.edu.br/bi</a>
+  &nbsp;·&nbsp; IFPI — Instituto Federal do Piauí &nbsp;·&nbsp; PROPI
+</footer>
+
+<script src="/static/js/site.js" defer></script>
+
+</body>
+</html>

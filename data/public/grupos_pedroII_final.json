@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Anderson dos Reis Barros",
+    "grupo": "GPTIME - Grupo de Pesquisa em Tecnologias da Informação e",
+    "lider_1": "Anderson dos Reis Barros",
+    "lider_2": "Anderson dos Reis Barros"
+  },
+  {
+    "nome": "Antonio de Alencar Costa Silva",
+    "grupo": "Centro de Estudo e Pesquisa em Educação Matemática e Ensino  de",
+    "lider_1": "Cleonice Moreira Lino",
+    "lider_2": "Antonio de Alencar Costa Silva"
+  },
+  {
+    "nome": "Gilson Ricardo de Brito Cardoso",
+    "grupo": "Grupo de Estudo e Pesquisa sobre o ensino de Ciências e Matemática -",
+    "lider_1": "Wilton de Carvalho Lopes",
+    "lider_2": "Gilson Ricardo de Brito Cardoso"
+  },
+  {
+    "nome": "Rudy Camilo Nunes",
+    "grupo": "Biodiversidade e Biotecnologia do Centro-Norte Piauiense - BIOTECPI",
+    "lider_1": "Rudy Camilo Nunes",
+    "lider_2": "Rudy Camilo Nunes"
+  },
+  {
+    "nome": "Wilton de Carvalho Lopes",
+    "grupo": "Grupo de Estudo e Pesquisa sobre o ensino de Ciências e Matemática -",
+    "lider_1": "Wilton de Carvalho Lopes",
+    "lider_2": "Gilson Ricardo de Brito Cardoso"
+  }
+]

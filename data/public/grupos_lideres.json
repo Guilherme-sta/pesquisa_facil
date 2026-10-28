@@ -1,0 +1,800 @@
+[
+  {
+    "instituicao": "INSTITUIÇÃO",
+    "grupo": "GRUPO",
+    "lider_1": "LIDER",
+    "lider_2": "2o LIDER"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratório de Pesquisa e Extensão em Inovação Social e Negócios",
+    "lider_1": "Maria Mislene Rosado de Sousa",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Análise de alimentos, Etnociência e Produção Alimentícia",
+    "lider_1": "Edna Maria Ferreira Chaves",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "ANGLOLIT - Grupo de pesquisa em língua inglesa e literatura anglófona.",
+    "lider_1": "Israel Alves Correa Noletto",
+    "lider_2": "Jivago Araujo Holanda Ribeiro Goncalves"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Artrópodes",
+    "lider_1": "Jose Claudio Barros Ferraz",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Biodiversidade e Biotecnologia do Centro-Norte Piauiense - BIOTECPI",
+    "lider_1": "Rudy Camilo Nunes",
+    "lider_2": "Rudy Camilo Nunes"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Biodiversidade Vegetal de Ecossistemas Terrestres no Piauí",
+    "lider_1": "Genilson Alves dos Reis e Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Biotecnologia aplicada à alimentos - BIOTECAL",
+    "lider_1": "Vera Lucia Viana do Nascimento",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "BIOTECNOLOGIA E POLÍMEROS (BIOPOL)",
+    "lider_1": "Vicente Galber Freitas Viana",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Centro de Estudo e Pesquisa em Educação Matemática e Ensino  de",
+    "lider_1": "Cleonice Moreira Lino",
+    "lider_2": "Antonio de Alencar Costa Silva"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Co.Lab - Laboratório de Cocriação de Software",
+    "lider_1": "Elane Cristina da Rocha Cardoso",
+    "lider_2": "Elane Cristina da Rocha Cardoso Saraiva"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Compostos Bioativos em Alimentos",
+    "lider_1": "Alessandro de Lima",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "COMPUTAÇÃO, PESQUISA E ENSINO DE QUÍMICA (COMPEQ)",
+    "lider_1": "Luiz Brito de Souza Filho",
+    "lider_2": "Luiz Brito de Souza Filho"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "CRIAÇÃO, DESENVOLVIMENTO E APRIMORAMENTO DE MEDIADORES",
+    "lider_1": "Raimundo Nonato Meneses Sobreira",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "CURIAR - Grupo de Pesquisa em Design de Moda, Mercado e Sociedade.",
+    "lider_1": "Nelymar Goncalves do Nascimento",
+    "lider_2": "Nelymar Goncalves do Nascimento"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "EcoConstrua",
+    "lider_1": "Samuel Carvalho Resende",
+    "lider_2": "Cristiany Marinho Araujo"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Edáficos do Nordeste: GEP em Conservação de Solos, Águas e",
+    "lider_1": "Bruna de Freitas Iwata",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Educação a Distância e Tecnologias Digitais no Ensino",
+    "lider_1": "Robson Almeida Borges de Freitas",
+    "lider_2": "Robson Almeida Borges de Freitas"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Educação Tecnológica na Contemporaneidade - ETC",
+    "lider_1": "Jose Carlos Raulino Lopes",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "EduIn - Núcleo de Estudos em Educação Inclusiva",
+    "lider_1": "Erika Galvao Figueredo",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Estudos Avançados em Gestão e Negócios (EAGeN)",
+    "lider_1": "Liaria Nunes da Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Estudos de transmissões musicais em diferentes contextos - ESTRAMUS",
+    "lider_1": "Rodolfo Rodrigues",
+    "lider_2": "Ricardo Francisco dos Reis"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Estudos em Monitoramento Ambiental",
+    "lider_1": "Anna Kelly Moreira da Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GEIPEC - Grupo de Ensino, Inovação e Pesquisa em Engenharia Civil-IFPI",
+    "lider_1": "Ailton Soares Freire",
+    "lider_2": "Ailton Soares Freire"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GENALE - Grupo de Pesquisa, Ensino e Aprendizagem da Leitura e da Escrita",
+    "lider_1": "Raimunda Gomes de Carvalho Belini",
+    "lider_2": "Leila Patricia Alves Dantas"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GEPAD - Grupo de Estudo e Pesquisa em Administração",
+    "lider_1": "Valdivia Regina Medeiros Queiroz",
+    "lider_2": "Valdivia Regina Medeiros Queiroz"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GEPRETAS - Grupo de Estudos de Práticas de Ensino e Textos",
+    "lider_1": "Benedito Sullivam Lopes",
+    "lider_2": "Luciana de Lima Pereira"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Gestão de Águas Urbanas",
+    "lider_1": "Bruna de Freitas Iwata",
+    "lider_2": "Bruna de Freitas Iwata"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GPIN-CEPP",
+    "lider_1": "Denizete Lima de Mesquita",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GPTIME - Grupo de Pesquisa em Tecnologias da Informação e",
+    "lider_1": "Anderson dos Reis Barros",
+    "lider_2": "Anderson dos Reis Barros"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GREFTA",
+    "lider_1": "Augusto Placido Cavalcante Melo",
+    "lider_2": "Kleyton Janio Camelo"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Aplicações de Inteligência Artificial",
+    "lider_1": "Marina Bezerra da Silva",
+    "lider_2": "Marina Bezerra da Silva"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de BioinorgÃ¢nica e Materiais - GBIMAT",
+    "lider_1": "Marcia Valeria Silva Lima",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudo e Pesquisa sobre o ensino de Ciências e Matemática -",
+    "lider_1": "Wilton de Carvalho Lopes",
+    "lider_2": "Gilson Ricardo de Brito Cardoso"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos e Pesquisa com Forragem - GEP-Forragem",
+    "lider_1": "Gil Mario Ferreira Gomes",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos e Pesquisa em Educação, Inclusão e Politica Públicas -",
+    "lider_1": "Andre Araujo de Oliveira",
+    "lider_2": "Andre Araujo de Oliveira"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos e Pesquisa em Investigação e Monitoramento da",
+    "lider_1": "Bruna de Freitas Iwata",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos e Pesquisas em Clima, Riscos, Desastres e",
+    "lider_1": "Sammya Vanessa Vieira Chaves",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos e Pesquisas em Educação Profissional e Tecnológica",
+    "lider_1": "Emanoela Moreira Maciel",
+    "lider_2": "Juscelino Gomes Lima"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos e Pesquisas em Gestão e Organização - GEPGOR",
+    "lider_1": "Marcio Nannini da Silva Florencio",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos e Pesquisas Interdisciplinares em Saúde Escolar -",
+    "lider_1": "Cristiana Galeno da Costa Pereira",
+    "lider_2": "Cristiana Galeno da Costa Pereira"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos em Gestão de Pessoas e suas Tecnologias - GENTE",
+    "lider_1": "Francisco Valdivino Rocha",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos em Linguagens, Cultura e Educação - GELCE",
+    "lider_1": "Vinicius Dias de Carvalho",
+    "lider_2": "Vinicius Dias de Carvalho"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos em Pastagens e Produção Animal (GEPAST)",
+    "lider_1": "Vandenberg Lira Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Estudos em Sistemas de Produção e Reprodução de Ruminantes",
+    "lider_1": "Jose Mauricio Maciel Cavalcante",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Física Teórica e Computacional - GFTC",
+    "lider_1": "Francisco Nogueira Lima",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Investigación y Estudios en Linguística y Literatura",
+    "lider_1": "Marcio Leonardo Lima Pereira",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Materiais Nanoestruturados (GMNano)",
+    "lider_1": "Francisco Ronan Viana Araujo",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GRUPO DE PESQUISA DE ESTRADAS - GPE",
+    "lider_1": "Joseam Cabral de Moraes",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de pesquisa e Estudos em Educação, Meio Ambiente, Inclusão e",
+    "lider_1": "Ana Keuly Luz Bezerra",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa Educação em Artes Visuais",
+    "lider_1": "Virginia Lopes de Lemos",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Avaliação Pós-Ocupação",
+    "lider_1": "Jose de Souza Gomes Junior",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Educação Profissional e Tecnológica em",
+    "lider_1": "Iuri Augusto Alves Lustosa",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Energias Renováveis e Ciências da Natureza",
+    "lider_1": "Kristian Pessoa dos Santos",
+    "lider_2": "Wilson Rosas de Vasconcelos Neto"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GRUPO DE PESQUISA EM ENGENHARIA DE MATERIAIS E PROCESSOS",
+    "lider_1": "Gilvan Moreira da Paz",
+    "lider_2": "Vicente Galber Freitas Viana"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Engenharia, Sustentabilidade e Meio Ambiente",
+    "lider_1": "Osvaldo Lailson da Costa Saraiva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Ensino de Ciências e Matemática campus Uruçuí",
+    "lider_1": "Cesar Marcos do Nascimento Lucas",
+    "lider_2": "Cesar Marcos do Nascimento Lucas"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Gestão e Inovação Tecnológica - Grupitec",
+    "lider_1": "Francisco Valdivino Rocha",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Informática de Corrente (GPIC)",
+    "lider_1": "Jurandir Cavalcante Lacerda",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Inteligência Artificial orientada à superação de",
+    "lider_1": "Rafael Angelo Santos Leite",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Matemática e Aplicações GPMAp",
+    "lider_1": "Rui Marques Carvalho",
+    "lider_2": "Jerson Leite Alves"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Metodologias no Ensino de Botânica e Sistemática",
+    "lider_1": "Odivette Maria Soares Felix",
+    "lider_2": "Vivianne Nunes Silva Borges"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GRUPO DE PESQUISA EM POLÍTICAS EDUCACIONAIS, PRÁTICAS",
+    "lider_1": "Regina de Sousa Rocha Cruz",
+    "lider_2": "Kenia Cosme da Silva Cardozo"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Práticas Empresariais",
+    "lider_1": "Rafael Sales Almendra",
+    "lider_2": "Ruthelle Maria de Carvalho Sousa"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de pesquisa em produção, modificação e caracterização de",
+    "lider_1": "Marina de Oliveira Cardoso Macedo",
+    "lider_2": "Marina de Oliveira Cardoso Macedo"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Sistemas Embarcados e Instrumentação",
+    "lider_1": "Daniel Ferreira da Ponte",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa em Sustentabilidade,  Finanças e Gestão -",
+    "lider_1": "Helder Araujo de Carvalho",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisa Ensino de Física - GPEF",
+    "lider_1": "Pedro Jose Feitosa Alves Junior",
+    "lider_2": "Pedro Jose Feitosa Alves Junior"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "GRUPO DE PESQUISA: G.P II - B.O.I.L.E.S - BASE OBSERVACIONAL",
+    "lider_1": "Vicente Medeiros Carvalho",
+    "lider_2": "Vicente Medeiros Carvalho"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de pesquisas em ciências humanas e linguagens no Cerrado -",
+    "lider_1": "Glaucimara Alves da Costa Vieira",
+    "lider_2": "Glaucimara Alves da Costa Vieira"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo de Pesquisas em Comportamento do Consumidor",
+    "lider_1": "Wendel Carlos Carvalho Melo",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo Dinâmicas Espaciais e Ordenamento Urbano - GDEOUR",
+    "lider_1": "Juscelino Gomes Lima",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo Espectroscopia Raman e Infravermelho - GERI",
+    "lider_1": "Haroldo Reis Alves de Macedo",
+    "lider_2": "Haroldo Reis Alves de Macedo"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo Interdisciplinar de Estudos e  Pesquisas em Saúde do Sono - GIEPSO",
+    "lider_1": "Rosyvaldo Ferreira Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo Interdisciplinar de Estudos e Pesquisas em Secretariado - GIEPS",
+    "lider_1": "Janaine Marques Leal",
+    "lider_2": "Janaine Marques Leal"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Grupo Interdisciplinar de Pesquisa em Energias Renováveis e Sustentabilidade",
+    "lider_1": "Osvaldo Augusto Vasconcelos de",
+    "lider_2": "Osvaldo Augusto Vasconcelos de"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratório de Biologia Molecular e Epidemiologia",
+    "lider_1": "Marcelo Cardoso da Silva Ventura",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratório de Computação Aplicada de Parnaíba - LaCAPa",
+    "lider_1": "Francisco Gerson Amorim de",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratório de Física Teórica e Computacional - LAFITEC",
+    "lider_1": "Jorge Augusto Coura Gomes",
+    "lider_2": "Jorge Augusto Coura Gomes"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratório de Pesquisa em Sistemas de Informação (LaPeSI)",
+    "lider_1": "Nadia Mendes dos Santos",
+    "lider_2": "Nadia Mendes dos Santos"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratório de Pesquisas e Estudos em Computação - LAPEC",
+    "lider_1": "Mayllon Veras da Silva",
+    "lider_2": "Mayllon Veras da Silva"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratório Interdisciplinar Sociedade, Ambiente e Direito (LISA-D)",
+    "lider_1": "Afonso Feitosa Reis Neto",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Laboratory of Innovation on Multimedia Systems (LIMS)",
+    "lider_1": "Fabio de Jesus Lima Gomes",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "LEDS",
+    "lider_1": "Simone Fernanda Silva Magalhaes",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "LIARA - Laboratório de Inteligência Artificial, Robótica e Automação",
+    "lider_1": "Manoel Messias Pereira Medeiros",
+    "lider_2": "Manoel Messias Pereira Medeiros"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Linguagem, Educação e Tecnologias Educacionais - LETE",
+    "lider_1": "Tamara Milhomem",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "LUAR (Laboratório Unificado de Artes e Relações Interdisciplinares",
+    "lider_1": "Marcia Pereira de Oliveira",
+    "lider_2": "Thiago Cabral Carvalho"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "LUTAS - Núcleo de Pesquisa em Educação Científica e Sustentabilidade",
+    "lider_1": "Marcelo Bruno Araujo Queiroz",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "MEIO AMBIENTE E DESENVOLVIMENTO SUSTENTÃVEL",
+    "lider_1": "Glairton Cardoso Rocha",
+    "lider_2": "Marcos Antonio Cavalcante de Oliveira"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NEPEH- Núcleo de Estudos e Pesquisas em Ensino de História",
+    "lider_1": "Marluce Lima de Morais",
+    "lider_2": "Ariany Maria Farias de Souza"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NESI - Núcleo de estratégia, sustentabilidade e inovação",
+    "lider_1": "Jalva Lilia Rabelo de Sousa",
+    "lider_2": "Jalva Lilia Rabelo de Sousa"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NESI - Núcleo de estratégia, sustentabilidade e inovação",
+    "lider_1": "Jeferson Luis Marinho de",
+    "lider_2": "Jalva Lilia Rabelo de Sousa"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NIESAH - Núcleo de Inovação em Engenharia de Software e Aspectos",
+    "lider_1": "Camila Freitas Sarmento",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Biomonitoramento Ambiental",
+    "lider_1": "Divamelia de Oliveira Bezerra",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Computação Aplicada",
+    "lider_1": "Otilio Paulo da Silva Neto",
+    "lider_2": "Ana Claudia Galvao Xavier"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudo Luminotécnico (NEL)",
+    "lider_1": "Newton Leite de Souza",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudos Africanos e Indígenas do IFPI Campus Teresina",
+    "lider_1": "Francisco Jose Sampaio Melo",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NÚCLEO DE ESTUDOS AFRICANOS E INDÍGENAS(NEAFRO)",
+    "lider_1": "Francisco Gomes Ribeiro Filho",
+    "lider_2": "Francisco Gomes Ribeiro Filho"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudos da Canção",
+    "lider_1": "Alfredo Werney Lima Torres",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudos de Participação Social - NEPAS",
+    "lider_1": "Marx Rodrigues de Moura",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NÚCLEO DE ESTUDOS E PESQUISAS EM TÊXTIL, DESIGN, VESTUÁRIO E MODA",
+    "lider_1": "Rimena Canuto Oliveira",
+    "lider_2": "Rimena Canuto Oliveira"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudos em Alimentos, Gastronomia e Sociobiodiversidade ¿",
+    "lider_1": "Joelaine de Jesus Santana",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudos em Apícolas: Pesquisa, Inovação e Sustentabilidade",
+    "lider_1": "Romezio Alves Carvalho da Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudos em Materiais e Engenharia Civil - NEMEC",
+    "lider_1": "Raquel Ferreira do Nascimento",
+    "lider_2": "Raquel Ferreira do Nascimento"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Estudos Organizacionais no Nordeste - NEON",
+    "lider_1": "Rafael Fernandes de Mesquita",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Extensão e Pesquisa em Mobilidade",
+    "lider_1": "Ana Claudia Galvao Xavier",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Pesquisa em Direitos Humanos: Educação, Trabalho e",
+    "lider_1": "Ivanna Kathia Barbosa de Sousa",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NÚCLEO DE PESQUISA EM ENSINO, CIÊNCIAS E TECNOLOGIAS - NUPECT",
+    "lider_1": "Leanne Silva de Sousa",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Pesquisa em Ensino de Ciências e Matemática",
+    "lider_1": "Andre Luiz Ferreira de Carvalho Melo",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NÚCLEO DE PESQUISA EM LINGUÍSTICA, LITERATURA E ENSINO - NUPLLE",
+    "lider_1": "Francisca da Rocha Barros",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Pesquisa em Processos Organizacionais e Tecnologia",
+    "lider_1": "Erika Maria Jamir de Oliveira",
+    "lider_2": "Irlanda Pires de Sa Sousa"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Pesquisa Interdisciplinar e Desenvolvimento Tecnológico (NuPIDT)",
+    "lider_1": "Roosevelt Delano de Sousa Bezerra",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NÚCLEO DE PESQUISA INTERDISCIPLINAR EM",
+    "lider_1": "Rosemary Mendes Farias",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Pesquisas em Ensino de Ciências e Matemática - NUPEC",
+    "lider_1": "Romezio Alves Carvalho da Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Pesquisas em Meio Ambiente",
+    "lider_1": "Anna Kelly Moreira da Silva",
+    "lider_2": "Anna Kelly Moreira da Silva"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Pesquisas em Organizações, Sustentabilidade e Sociedade (NOSSO)",
+    "lider_1": "Clayton Robson Moreira da Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo de Produção, Processamento de Alimentos e Biotecnologia",
+    "lider_1": "Rayssa Gabriela Lima Porto Luz",
+    "lider_2": "Etelvina Maria de Carvalho Goncalves"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo Estratégico em Geografia do IFPI - NEG",
+    "lider_1": "Renato Sergio Soares Costa",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Núcleo Multidisciplinar de Estudos em Educação Profissional e Tecnológica",
+    "lider_1": "Fernando Malheiros Nunes",
+    "lider_2": "Fernando Malheiros Nunes"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "NUPECEF - NÚCLEO DE PESQUISA EM ENSINO DE CIÊNCIAS, EDUCAÇÃO E",
+    "lider_1": "Andre Ricardo Viana Nunes",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Pesquisas Aplicadas às Ciências Biológicas",
+    "lider_1": "Brunna Laryelle Silva Bomfim",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Povos indígenas na História do Piauí",
+    "lider_1": "Rafael Ricarte da Silva",
+    "lider_2": "Rafael Ricarte da Silva"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Predição Experimental da Propagação de Trincas",
+    "lider_1": "Ayrton de Sa Brandim",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Projeto VIP: Vilas Indígenas Pombalinas",
+    "lider_1": "Soraia Sales Dornelles",
+    "lider_2": "Soraia Sales Dornelles"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Química de Produtos Naturais",
+    "lider_1": "Joaquim Soares da Costa Junior",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Recursos Naturais e Educação do Nordeste (RENEDU)",
+    "lider_1": "Thiago de Sousa Fonseca",
+    "lider_2": "Thiago de Sousa Fonseca"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Rede Simbiose",
+    "lider_1": "Divamelia de Oliveira Bezerra",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "SciGEO - Núcleo de Estudos Avançados em Ciência Geoespacial",
+    "lider_1": "Reurysson Chagas de Sousa Morais",
+    "lider_2": "Amanda Bezerra Matias"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "TECFIS - Tecnologias Educacionais para o Ensino de Física",
+    "lider_1": "Reginaldo Gomes de Lima Junior",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Tecnologia e Processamento de Alimentos",
+    "lider_1": "Robson Alves da Silva",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Temáticas Ambientais",
+    "lider_1": "Ronyson de Lima Lopes",
+    "lider_2": "-"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "TRIP (Turma de Robótica, Inovação e Pesquisa)",
+    "lider_1": "Maria Lais Felix da Silva",
+    "lider_2": "Uesllei Sousa Reis"
+  },
+  {
+    "instituicao": "Instituto Federal do Piauí",
+    "grupo": "Walter Benjamin: história, estética  e visualidades",
+    "lider_1": "Jaison Castro Silva",
+    "lider_2": "-"
+  }
+]
