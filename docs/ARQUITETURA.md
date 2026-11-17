@@ -41,9 +41,9 @@ Sem ano selecionado, a métrica é o total acumulado de citações do OpenAlex. 
 
 ## Rotas
 
-- `GET /api/citations/faculty`: lista filtrável; aceita `q`, `campus`, `area`, `degree` e `year`; exige sessão.
+- `GET /api/citations/faculty`: lista pública filtrável; aceita `q`, `campus`, `area`, `degree` e `year`.
 - `GET /api/public-data/<arquivo>`: serve apenas JSONs sanitizados e autorizados da lista de grupos.
-- `GET /painel`: interface do site; exige sessão SUAP.
+- `GET /` e `GET /painel`: interface pública do site.
 
 ## Referências
 

@@ -114,56 +114,235 @@ function renderCampus(dados) {
 carregarTodosCampus();
 
 // ─── ABA 4: GRUPOS IFPI ─────────────────────────────────────────────────────
+// ─── ABA 4: GRUPOS IFPI — COM DATA DE CRIAÇÃO E ORDENAÇÃO ────────────────────
 let dadosGrupos = [];
 
 const searchGrupos  = document.getElementById('searchGrupos');
 const tableGrupos   = document.getElementById('tableGrupos');
 const counterGrupos = document.getElementById('counterGrupos');
 
-async function carregarGrupos() {
-  try {
-    const res = await fetch('/api/public-data/grupos_lideres.json');
-    if (!res.ok) throw new Error();
-    const todos = await res.json();
-    dadosGrupos = todos.filter((d, i) => i > 0 && d.grupo && d.grupo !== 'GRUPO');
-    renderGrupos(dadosGrupos);
-  } catch {
-    tableGrupos.innerHTML = `<tr class="status-row"><td colspan="4" style="color:#b91c1c;">Erro ao carregar os dados dos grupos pelo servidor.</td></tr>`;
+// Datas obtidas da planilha "rel_consulta_parametrizada_por_grupo".
+// Quando o próprio JSON já possuir data_criacao, ela terá prioridade.
+const DATAS_CRIACAO_GRUPOS = {
+  "Núcleo de Estudos da Canção": "18/03/2026",
+  "SciGEO - Núcleo de Estudos Avançados em Ciência Geoespacial": "05/04/2026",
+  "Núcleo de Extensão e Pesquisa em Mobilidade": "26/07/2017",
+  "Grupo de Estudos e Pesquisa em Educação, Inclusão e Politica Públicas -": "10/12/2025",
+  "Núcleo de Estudos em Conservação do Solo e Planejamento Geoespacial": null,
+  "Estudos em Monitoramento Ambiental": "15/10/2025",
+  "Núcleo de Pesquisas em Meio Ambiente": "17/09/2025",
+  "Predição Experimental da Propagação de Trincas": "04/04/2025",
+  "Edáficos do Nordeste: GEP em Conservação de Solos, Águas e Florestas do Nordeste": "12/04/2025",
+  "Gestão de Águas Urbanas": "12/08/2025",
+  "Grupo de Estudos e Pesquisa em Investigação e Monitoramento da": "07/04/2025",
+  "Grupo de Pesquisa em Sistemas Embarcados e Instrumentação": "16/09/2025",
+  "Grupo de Estudos e Pesquisas em Educação Profissional e Tecnológica": "04/09/2025",
+  "Laboratory of Innovation on Multimedia Systems (LIMS)": "16/12/2024",
+  "Grupo Espectroscopia Raman e Infravermelho - GERI": "12/12/2025",
+  "Núcleo de Pesquisa em Direitos Humanos: Educação, Trabalho e": "16/04/2026",
+  "Grupo Interdisciplinar de Estudos e Pesquisas em Secretariado - GIEPS": "16/12/2024",
+  "Química de Produtos Naturais": "16/09/2025",
+  "Laboratório de Física Teórica e Computacional - LAFITEC": "10/10/2025",
+  "Educação Tecnológica na Contemporaneidade - ETC": "29/01/2021",
+  "GENALE - Grupo de Pesquisa, Ensino e Aprendizagem da Leitura e da Escrita": "02/10/2025",
+  "Laboratório de Biologia Molecular e Epidemiologia": "26/03/2026",
+  "LUAR (Laboratório Unificado de Artes e Relações Interdisciplinares": "14/01/2026",
+  "Grupo de Investigación y Estudios en Linguística y Literatura": "19/08/2021",
+  "Laboratório de Pesquisa em Sistemas de Informação (LaPeSI)": "28/11/2025",
+  "Núcleo de Computação Aplicada": "19/03/2026",
+  "Grupo de Pesquisa em Práticas Empresariais": "22/04/2025",
+  "CRIAÇÃO, DESENVOLVIMENTO E APRIMORAMENTO DE MEDIADORES": "04/09/2025",
+  "Núcleo de Produção, Processamento de Alimentos e Biotecnologia": "10/02/2026",
+  "Núcleo Estratégico em Geografia do IFPI - NEG": "06/12/2024",
+  "Núcleo de Pesquisa Interdisciplinar e Desenvolvimento Tecnológico (NuPIDT)": "28/02/2024",
+  "NÚCLEO DE PESQUISA INTERDISCIPLINAR EM": "05/10/2025",
+  "Grupo de Estudos e Pesquisas em Clima, Riscos, Desastres e": "26/03/2026",
+  "Biotecnologia aplicada à alimentos - BIOTECAL": "15/09/2025",
+  "BIOTECNOLOGIA E POLÍMEROS (BIOPOL)": "14/04/2026",
+  "GRUPO DE PESQUISA EM ENGENHARIA DE MATERIAIS E PROCESSOS": "17/03/2025",
+  "Grupo de Pesquisas em Comportamento do Consumidor": "05/11/2025"
+};
+
+function normalizarNomeGrupo(valor) {
+  return String(valor || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLocaleLowerCase('pt-BR');
+}
+
+const DATAS_NORMALIZADAS = new Map(
+  Object.entries(DATAS_CRIACAO_GRUPOS).map(([grupo, data]) => [
+    normalizarNomeGrupo(grupo), data
+  ])
+);
+
+function obterDataCriacao(item) {
+  // Aceita propriedades alternativas caso a consulta já tenha sido adaptada.
+  const dataExistente =
+    item.data_criacao ??
+    item.dataCriacao ??
+    item.data_de_criacao ??
+    item['DATA DE CRIAÇÃO DO GRUPO'];
+
+  return dataExistente || DATAS_NORMALIZADAS.get(normalizarNomeGrupo(item.grupo)) || null;
+}
+
+function converterDataBR(data) {
+  if (!data) return null;
+  if (data instanceof Date && !Number.isNaN(data.getTime())) return data;
+
+  const texto = String(data).trim();
+  const br = texto.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  if (br) {
+    const dataObj = new Date(Number(br[3]), Number(br[2]) - 1, Number(br[1]));
+    return Number.isNaN(dataObj.getTime()) ? null : dataObj;
+  }
+
+  const iso = texto.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) {
+    const dataObj = new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]));
+    return Number.isNaN(dataObj.getTime()) ? null : dataObj;
+  }
+
+  const dataObj = new Date(texto);
+  return Number.isNaN(dataObj.getTime()) ? null : dataObj;
+}
+
+function formatarDataBR(data) {
+  const dataObj = converterDataBR(data);
+  return dataObj
+    ? dataObj.toLocaleDateString('pt-BR')
+    : 'Não informada';
+}
+
+// Cria o seletor sem exigir alteração manual no HTML.
+let sortGrupos = document.getElementById('sortGrupos');
+if (!sortGrupos && searchGrupos) {
+  sortGrupos = document.createElement('select');
+  sortGrupos.id = 'sortGrupos';
+  sortGrupos.setAttribute('aria-label', 'Ordenar grupos por data de criação');
+  sortGrupos.innerHTML = `
+    <option value="padrao">Ordem padrão</option>
+    <option value="recentes">Mais novos primeiro</option>
+    <option value="antigos">Mais antigos primeiro</option>
+  `;
+  sortGrupos.style.cssText =
+    'min-height:42px;padding:9px 12px;border:1px solid var(--cinza-borda,#d1d5db);' +
+    'border-radius:10px;background:var(--branco,#fff);color:inherit;font:inherit;';
+
+  searchGrupos.insertAdjacentElement('afterend', sortGrupos);
+}
+
+function prepararCabecalhoData() {
+  const tabela = tableGrupos?.closest('table');
+  const cabecalho = tabela?.querySelector('thead tr');
+  if (!cabecalho) return;
+
+  if (!cabecalho.querySelector('[data-coluna-data-criacao]')) {
+    const th = document.createElement('th');
+    th.textContent = 'DATA DE CRIAÇÃO';
+    th.setAttribute('data-coluna-data-criacao', 'true');
+    cabecalho.appendChild(th);
   }
 }
 
-searchGrupos.addEventListener('input', (e) => {
-  const t = e.target.value.toLowerCase().trim();
-  renderGrupos(dadosGrupos.filter(item =>
-    [item.grupo, item.lider_1, item.lider_2].some(v => (v || '').toLowerCase().includes(t))
-  ));
-});
+async function carregarGrupos() {
+  try {
+    const res = await fetch('/api/public-data/grupos_lideres.json');
+    if (!res.ok) throw new Error('Não foi possível carregar os grupos.');
+
+    const todos = await res.json();
+    dadosGrupos = todos
+      .filter((d, i) => i > 0 && d.grupo && d.grupo !== 'GRUPO')
+      .map(item => ({ ...item, data_criacao: obterDataCriacao(item) }));
+
+    prepararCabecalhoData();
+    renderGrupos(dadosGrupos);
+  } catch (error) {
+    tableGrupos.innerHTML =
+      '<tr class="status-row"><td colspan="5" style="color:#b91c1c;">' +
+      'Erro ao carregar os dados dos grupos pelo servidor.</td></tr>';
+    console.error(error);
+  }
+}
+
+function aplicarFiltrosGrupos() {
+  const termo = (searchGrupos?.value || '').toLocaleLowerCase('pt-BR').trim();
+  let filtrados = dadosGrupos.filter(item =>
+    [item.grupo, item.lider_1, item.lider_2]
+      .some(valor => String(valor || '').toLocaleLowerCase('pt-BR').includes(termo))
+  );
+
+  const ordem = sortGrupos?.value || 'padrao';
+  if (ordem === 'recentes' || ordem === 'antigos') {
+    filtrados = [...filtrados].sort((a, b) => {
+      const da = converterDataBR(a.data_criacao);
+      const db = converterDataBR(b.data_criacao);
+
+      // Sem data sempre fica depois dos grupos datados.
+      if (!da && !db) return String(a.grupo).localeCompare(String(b.grupo), 'pt-BR');
+      if (!da) return 1;
+      if (!db) return -1;
+
+      return ordem === 'recentes' ? db - da : da - db;
+    });
+  }
+
+  renderGrupos(filtrados);
+}
+
+searchGrupos?.addEventListener('input', aplicarFiltrosGrupos);
+sortGrupos?.addEventListener('change', aplicarFiltrosGrupos);
 
 function renderGrupos(dados) {
   tableGrupos.innerHTML = '';
   counterGrupos.style.display = 'block';
 
   if (!dados.length) {
-    tableGrupos.innerHTML = `<tr class="status-row"><td colspan="4">Nenhum resultado encontrado.</td></tr>`;
+    tableGrupos.innerHTML =
+      '<tr class="status-row"><td colspan="5">Nenhum resultado encontrado.</td></tr>';
     counterGrupos.textContent = '0 grupos encontrados.';
     return;
   }
 
   counterGrupos.textContent = `${dados.length} grupo(s) encontrado(s).`;
+  const fragmento = document.createDocumentFragment();
+
   dados.forEach((item, idx) => {
-    const lider2 = (!item.lider_2 || item.lider_2 === '-') ? '<span style="color:var(--cinza-borda);">—</span>' : item.lider_2;
     const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td class="mono">${idx + 1}</td>
-      <td style="font-weight:600; max-width:300px; word-break:break-word;">${item.grupo}</td>
-      <td class="muted">${item.lider_1}</td>
-      <td class="muted">${lider2}</td>
-    `;
-    tableGrupos.appendChild(tr);
+    const lider2 = (!item.lider_2 || item.lider_2 === '-') ? '—' : item.lider_2;
+
+    const valores = [
+      String(idx + 1),
+      item.grupo || '—',
+      item.lider_1 || '—',
+      lider2,
+      formatarDataBR(item.data_criacao)
+    ];
+
+    valores.forEach((valor, coluna) => {
+      const td = document.createElement('td');
+      td.textContent = valor;
+      if (coluna === 0) td.className = 'mono';
+      if (coluna === 2 || coluna === 3 || coluna === 4) td.classList.add('muted');
+      if (coluna === 1) {
+        td.style.fontWeight = '600';
+        td.style.maxWidth = '300px';
+        td.style.wordBreak = 'break-word';
+      }
+      if (coluna === 4) td.style.whiteSpace = 'nowrap';
+      tr.appendChild(td);
+    });
+
+    fragmento.appendChild(tr);
   });
+
+  tableGrupos.appendChild(fragmento);
 }
 
-// Carrega grupos automaticamente ao abrir a página
+// Carrega grupos automaticamente ao abrir a página.
 carregarGrupos();
 
 // ─── CITAÇÕES E DOCENTES ────────────────────────────────────────────────────
