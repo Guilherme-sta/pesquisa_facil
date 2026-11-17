@@ -274,6 +274,16 @@
       </div>
     </div>
 
+    <div class="filter-group">
+      <label for="sortCampus">Ordenar por data de criação</label>
+      <select id="sortCampus">
+        <option value="padrao">Ordem padrão</option>
+        <option value="recentes">Mais recentes primeiro</option>
+        <option value="antigos">Mais antigos primeiro</option>
+      </select>
+    </div>
+  </div>
+
     <div id="counterCampus" class="counter-bar" style="display:none;"></div>
 
     <div class="table-wrap">
@@ -282,13 +292,14 @@
           <tr>
             <th>Campus</th>
             <th>Grupo de Pesquisa</th>
+            <th>Data de Criação</th>
             <th>Servidor (Match)</th>
             <th>Líderes Originais</th>
           </tr>
         </thead>
         <tbody id="tableCampus">
           <tr class="status-row">
-            <td colspan="4"><span class="loading-spinner"></span> Carregando grupos de todos os campi...</td>
+            <td colspan="5"><span class="loading-spinner"></span> Carregando grupos de todos os campi...</td>
           </tr>
         </tbody>
       </table>
@@ -327,6 +338,7 @@
             <th>Grupo de Pesquisa</th>
             <th>Líder 1</th>
             <th>Líder 2</th>
+            <th>Data de Criação</th>
           </tr>
         </thead>
         <tbody id="tableGrupos">

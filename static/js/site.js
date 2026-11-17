@@ -32,6 +32,7 @@ const campusSelect  = document.getElementById('campusSelect');
 const searchCampus  = document.getElementById('searchCampus');
 const tableCampus   = document.getElementById('tableCampus');
 const counterCampus = document.getElementById('counterCampus');
+const sortCampus = document.getElementById('sortCampus');
 
 async function carregarTodosCampus() {
   tableCampus.innerHTML = `<tr class="status-row"><td colspan="4"><span class="loading-spinner"></span> Carregando grupos de todos os campi...</td></tr>`;
@@ -48,7 +49,13 @@ async function carregarTodosCampus() {
   resultados.forEach((res, i) => {
     if (res.status === 'fulfilled') {
       const nome = CAMPUS_FILES[i].nome;
-      res.value.forEach(item => dadosCampusTodos.push({ ...item, campusNome: nome }));
+      res.value.forEach(item => {
+        dadosCampusTodos.push({
+          ...item,
+          campusNome: nome,
+          data_criacao: obterDataCriacao(item)
+        });
+      });
     } else {
       falhas++;
     }
@@ -63,51 +70,119 @@ async function carregarTodosCampus() {
   }
 }
 
-campusSelect.addEventListener('change', (e) => {
-  const arquivo = e.target.value;
-  searchCampus.value = '';
+function aplicarFiltrosCampus() {
+  const arquivo = campusSelect.value;
+  const termo = searchCampus.value
+    .toLocaleLowerCase('pt-BR')
+    .trim();
 
-  if (!arquivo) {
-    dadosCampusAtual = dadosCampusTodos;
-  } else {
+  let filtrados = dadosCampusTodos.filter(item => {
     const campusInfo = CAMPUS_FILES.find(c => c.file === arquivo);
-    dadosCampusAtual = dadosCampusTodos.filter(item => item.campusNome === campusInfo.nome);
-  }
-  renderCampus(dadosCampusAtual);
-});
 
-searchCampus.addEventListener('input', (e) => {
-  const t = e.target.value.toLowerCase().trim();
-  renderCampus(dadosCampusAtual.filter(item =>
-    [item.nome, item.grupo, item.lider_1, item.lider_2, item.campusNome]
-      .some(v => (v || '').toLowerCase().includes(t))
-  ));
-});
+    const correspondeCampus =
+      !arquivo || (campusInfo && campusInfo.nome === item.campusNome);
+
+    const correspondeBusca =
+      [
+        item.nome,
+        item.grupo,
+        item.lider_1,
+        item.lider_2,
+        item.campusNome
+      ].some(valor =>
+        String(valor || '')
+          .toLocaleLowerCase('pt-BR')
+          .includes(termo)
+      );
+
+    return correspondeCampus && correspondeBusca;
+  });
+
+  const ordem = sortCampus?.value || 'padrao';
+
+  if (ordem === 'recentes' || ordem === 'antigos') {
+    filtrados.sort((a, b) => {
+      const da = converterDataBR(a.data_criacao);
+      const db = converterDataBR(b.data_criacao);
+
+      if (!da && !db) return 0;
+      if (!da) return 1;
+      if (!db) return -1;
+
+      return ordem === 'recentes' ? db - da : da - db;
+    });
+  }
+
+  dadosCampusAtual = filtrados;
+  renderCampus(filtrados);
+}
+
+campusSelect.addEventListener('change', aplicarFiltrosCampus);
+searchCampus.addEventListener('input', aplicarFiltrosCampus);
+sortCampus?.addEventListener('change', aplicarFiltrosCampus);
 
 function renderCampus(dados) {
   tableCampus.innerHTML = '';
   counterCampus.style.display = 'block';
 
   if (!dados.length) {
-    tableCampus.innerHTML = `<tr class="status-row"><td colspan="4">Nenhum resultado encontrado.</td></tr>`;
+    tableCampus.innerHTML =
+      '<tr class="status-row"><td colspan="5">Nenhum resultado encontrado.</td></tr>';
+
     counterCampus.textContent = '0 registros encontrados.';
     return;
   }
 
   counterCampus.textContent = `${dados.length} registro(s) encontrado(s).`;
+
+  const fragmento = document.createDocumentFragment();
+
   dados.forEach(item => {
     const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td class="muted" style="font-weight:600; white-space:nowrap;">${item.campusNome || '—'}</td>
-      <td style="font-weight:600; max-width:260px; word-break:break-word;">${item.grupo || '—'}</td>
-      <td>${item.nome || '—'}</td>
-      <td class="muted">
-        <span class="td-label">Líder 1</span>${item.lider_1 || '—'}
-        <br><span class="td-label" style="margin-top:4px;">Líder 2</span>${item.lider_2 || '—'}
-      </td>
-    `;
-    tableCampus.appendChild(tr);
+
+    const tdCampus = document.createElement('td');
+    tdCampus.textContent = item.campusNome || '—';
+
+    const tdGrupo = document.createElement('td');
+    tdGrupo.textContent = item.grupo || '—';
+
+    const tdData = document.createElement('td');
+    tdData.textContent = formatarDataBR(item.data_criacao);
+
+    const tdServidor = document.createElement('td');
+    tdServidor.textContent = item.nome || '—';
+
+    const tdLideres = document.createElement('td');
+    tdLideres.textContent =
+      `Líder 1: ${item.lider_1 || '—'}\nLíder 2: ${
+        item.lider_2 && item.lider_2 !== '-' ? item.lider_2 : '—'
+      }`;
+
+    tdCampus.className = 'muted';
+    tdCampus.style.fontWeight = '600';
+
+    tdGrupo.style.fontWeight = '600';
+    tdGrupo.style.maxWidth = '260px';
+    tdGrupo.style.wordBreak = 'break-word';
+
+    tdData.className = 'muted';
+    tdData.style.whiteSpace = 'nowrap';
+
+    tdLideres.className = 'muted';
+    tdLideres.style.whiteSpace = 'pre-line';
+
+    tr.append(
+      tdCampus,
+      tdGrupo,
+      tdData,
+      tdServidor,
+      tdLideres
+    );
+
+    fragmento.appendChild(tr);
   });
+
+  tableCampus.appendChild(fragmento);
 }
 
 // Carrega os grupos de todos os campi automaticamente ao abrir a página
@@ -174,44 +249,74 @@ function normalizarNomeGrupo(valor) {
 
 const DATAS_NORMALIZADAS = new Map(
   Object.entries(DATAS_CRIACAO_GRUPOS).map(([grupo, data]) => [
-    normalizarNomeGrupo(grupo), data
+    normalizarNomeGrupo(grupo),
+    data
   ])
 );
 
 function obterDataCriacao(item) {
-  // Aceita propriedades alternativas caso a consulta já tenha sido adaptada.
   const dataExistente =
     item.data_criacao ??
     item.dataCriacao ??
     item.data_de_criacao ??
     item['DATA DE CRIAÇÃO DO GRUPO'];
 
-  return dataExistente || DATAS_NORMALIZADAS.get(normalizarNomeGrupo(item.grupo)) || null;
+  return dataExistente ||
+    DATAS_NORMALIZADAS.get(normalizarNomeGrupo(item.grupo)) ||
+    null;
 }
 
 function converterDataBR(data) {
   if (!data) return null;
-  if (data instanceof Date && !Number.isNaN(data.getTime())) return data;
 
   const texto = String(data).trim();
+
   const br = texto.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+
   if (br) {
-    const dataObj = new Date(Number(br[3]), Number(br[2]) - 1, Number(br[1]));
-    return Number.isNaN(dataObj.getTime()) ? null : dataObj;
+    const dia = Number(br[1]);
+    const mes = Number(br[2]);
+    const ano = Number(br[3]);
+
+    const dataObj = new Date(ano, mes - 1, dia);
+
+    if (
+      dataObj.getFullYear() !== ano ||
+      dataObj.getMonth() !== mes - 1 ||
+      dataObj.getDate() !== dia
+    ) {
+      return null;
+    }
+
+    return dataObj;
   }
 
   const iso = texto.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
   if (iso) {
-    const dataObj = new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]));
-    return Number.isNaN(dataObj.getTime()) ? null : dataObj;
+    const ano = Number(iso[1]);
+    const mes = Number(iso[2]);
+    const dia = Number(iso[3]);
+
+    const dataObj = new Date(ano, mes - 1, dia);
+
+    if (
+      dataObj.getFullYear() !== ano ||
+      dataObj.getMonth() !== mes - 1 ||
+      dataObj.getDate() !== dia
+    ) {
+      return null;
+    }
+
+    return dataObj;
   }
 
-  const dataObj = new Date(texto);
-  return Number.isNaN(dataObj.getTime()) ? null : dataObj;
+  return null;
 }
 
 function formatarDataBR(data) {
   const dataObj = converterDataBR(data);
+
   return dataObj
     ? dataObj.toLocaleDateString('pt-BR')
     : 'Não informada';
